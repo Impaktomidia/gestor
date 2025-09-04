@@ -1,0 +1,164 @@
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container-ponto {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #fff;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.titulo-pagina {
+    flex-basis: 100%;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #222;
+    margin: 0 0 30px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    user-select: none;
+}
+
+.info-box {
+    flex: 0 1 50%;
+    border-right: 2px solid #ddd;
+    padding-right: 0px;
+    box-sizing: border-box;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-box ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.8rem;
+    line-height: 0.5;
+}
+
+.info-box ul li strong {
+    color: #555;
+    width: 140px;
+    display: inline-block;
+}
+
+.visual-box {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding-left: 0px;
+    box-sizing: border-box;
+}
+
+.imagem-ponto {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+}
+
+.mapa-embed {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 220px;
+}
+
+.mapa-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.botoes {
+    margin-top: auto;
+    text-align: right;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 3px 7px rgba(74,144,226,0.6);
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #357abd;
+    box-shadow: 0 5px 12px rgba(53,122,189,0.7);
+}
+
+/* ================= BADGES ================= */
+.badge {
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.badge.disponivel { background-color: #27AE60; }
+.badge.reservado  { background-color: #E67E22; }
+.badge.ocupado    { background-color: #C0392B; }
+.badge.vencido    { background-color: #6e6e6e; }
+.badge.permuta    { background-color: #800080; }
+.badge.bisemana  { background-color: #0275ea; }
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 900px) {
+    .container-ponto {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-box, .visual-box {
+        flex: 1 1 100%;
+        border-right: none !important;
+        padding: 0 !important;
+        margin-bottom: 30px;
+    }
+
+    .info-box {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 20px !important;
+    }
+
+    .visual-box {
+        padding-left: 0 !important;
+    }
+
+    .imagem-ponto, .mapa-embed {
+        height: 200px;
+    }
+
+.observacoes {
+    font-style: italic;
+    color: red;
+}
+
+
+}

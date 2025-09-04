@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /impakto/site/
+
+# Se arquivo ou diretório existe, serve ele normalmente
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Se não existe, redireciona para index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

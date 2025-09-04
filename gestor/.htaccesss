@@ -1,0 +1,13 @@
+# Garantir que o index.php seja a página inicial
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteBase /impakto/gestor/
+
+# Se o arquivo ou diretório existir, serve ele normalmente
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Se não existir, redireciona tudo para index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

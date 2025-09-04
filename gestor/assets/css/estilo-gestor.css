@@ -1,0 +1,602 @@
+/* RESET E BASE */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    margin: 0;
+    padding: 150px 20px 20px 20px; /* Adiciona padding lateral de 20px */
+    background: #FAFAFA;
+    color: #2E2E2E;
+}
+
+/* TIPOGRAFIA */
+h1 {
+    margin-bottom: 20px;
+    color: #2E2E2E;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 40px;
+}
+
+/* HEADER */
+.topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 30px; /* Aumenta padding lateral do header */
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 1200px; /* Adiciona largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.logo img {
+    height: 40px;
+}
+
+.busca-google-central form {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Aumenta o espaço de ocupação */
+}
+
+.busca-google-central input[type="text"] {
+    width: 100%;
+    padding: 14px 60px; /* Altura confortável */
+    font-size: 18px;
+    border-radius: 999px;
+    border: 1px solid #dfe1e5;
+    box-shadow: 0 2px 6px rgba(32, 33, 36, 0.28);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.busca-google-central input[type="text"]:focus {
+    border-color: #4285f4;
+    box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+.busca-google-central .icone-lupa {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #5f6368;
+    cursor: pointer;
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.links-topo a {
+    text-decoration: none;
+    background-color: #fff;
+    color: #000;  
+    border: 1px solid #000;
+    margin-right: 8px;
+    transition: color 0.50s;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.links-topo a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.login-btn {
+    background-color: #C0392B;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #992d22;
+}
+
+/* USUÁRIO MENU */
+.usuario-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.btn-logout {
+    background-color: #C0392B;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #992d22;
+}
+
+/* FILTROS FIXOS */
+.filtros-container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 30px; /* Aumenta padding lateral dos filtros */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 998;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.pontos-contagem span {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #C0392B;
+    white-space: nowrap;
+}
+
+/* FORMULÁRIO DE FILTROS */
+.filtros-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.filtros-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: #2E2E2E;
+    font-weight: 600;
+}
+
+.filtros-form select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+    min-width: 160px;
+}
+
+.filtros-form select:focus {
+    border-color: #C0392B;
+    outline: none;
+    box-shadow: 0 0 6px rgba(192, 57, 43, 0.3);
+}
+
+.btn-reset {
+    padding: 10px 18px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-reset:hover {
+    background-color: #ccc;
+}
+
+/* CONTAINER COM SCROLL HORIZONTAL */
+.tabela-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0; /* Adiciona margem vertical */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    min-width: 800px; /* Largura mínima para evitar compressão excessiva */
+}
+
+table tr {
+    height: 36px; /* altura menor */
+}
+
+th, td {
+    padding: 6px 12px; /* Aumenta padding lateral das células */
+    line-height: 1.3;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 0.80rem; /* texto menor */
+    color: #2E2E2E;
+}
+
+th {
+    background-color: #ffffff;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #ddd; /* Borda mais destacada no cabeçalho */
+}
+
+tbody tr:hover {
+    background-color: #fceae8;
+    transition: background-color 0.25s;
+}
+
+/* BADGES */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 12px;
+    color: white;
+    min-width: 70px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.badge.disponivel { background-color: #27AE60; }
+.badge.reservado  { background-color: #E67E22; }
+.badge.ocupado    { background-color: #C0392B; }
+.badge.vencido    { background-color: #6e6e6e; }
+.badge.permuta    { background-color: #800080; }
+.badge.bisemana  { background-color: #026eea; }
+
+/* Estilos para formatação de datas mês/ano */
+.data-vazia {
+    color: #999;
+    font-style: italic;
+}
+
+.data-valida {
+    color: #333;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+}
+
+.data-erro {
+    color: #dc3545;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+.data-vencida {
+    color: #dc3545;
+    font-weight: 600;
+    background: #fff5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border-left: 3px solid #dc3545;
+    font-family: 'Courier New', monospace;
+}
+
+.data-proximo-vencimento {
+    color: #fd7e14;
+    font-weight: 600;
+    background: #fff8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border-left: 3px solid #fd7e14;
+    font-family: 'Courier New', monospace;
+}
+
+.data-futura {
+    color: #0d6efd;
+    font-weight: 500;
+    background: #f0f8ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border-left: 3px solid #0d6efd;
+    font-family: 'Courier New', monospace;
+}
+
+/* Estilos para meses restantes */
+.meses-vencido {
+    display: block;
+    color: #dc3545;
+    font-weight: 600;
+    margin-top: 2px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.meses-critico {
+    display: block;
+    color: #dc3545;
+    font-weight: 600;
+    margin-top: 2px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite;
+}
+
+.meses-atencao {
+    display: block;
+    color: #fd7e14;
+    font-weight: 500;
+    margin-top: 2px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.meses-normal {
+    display: block;
+    color: #28a745;
+    margin-top: 2px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+/* Animação para situações críticas */
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Container do período de contrato mensal */
+.periodo-contrato {
+    text-align: center;
+}
+
+.periodo-contrato .datas-mensais {
+    margin-bottom: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.periodo-contrato .separador {
+    color: #666;
+    font-size: 0.85em;
+    margin: 0 4px;
+}
+
+.periodo-contrato .meses-info {
+    font-size: 0.75em;
+}
+
+/* Estilos específicos para colunas de data */
+.tabela-data-inicio,
+.tabela-data-fim {
+    min-width: 80px;
+    text-align: center;
+}
+
+.data-compacta {
+    font-size: 1.0em;
+    display: block;
+}
+
+.tempo-restante {
+    font-size: 0.8em;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+/* Badges de status para tempo restante */
+.badge-tempo {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.badge-tempo.vencido {
+    background: #dc3545;
+    color: white;
+}
+
+.badge-tempo.critico {
+    background: #fd7e14;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+.badge-tempo.atencao {
+    background: #ffc107;
+    color: #333;
+}
+
+.badge-tempo.normal {
+    background: #28a745;
+    color: white;
+}
+
+.badge-tempo.indefinido {
+    background: #6c757d;
+    color: white;
+}
+
+/* Estilo para tabela mais compacta */
+.tabela-compacta td {
+    padding: 8px 12px; /* Aumenta padding lateral das células */
+    vertical-align: middle;
+}
+
+.tabela-compacta .data-compacta {
+    line-height: 1.2;
+}
+
+/* Tooltip para informações adicionais */
+.tooltip-data {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip-data:hover::after {
+    content: attr(title);
+    position: absolute;
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 1000;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 4px;
+}
+
+/* PAGINAÇÃO */
+.paginacao {
+    margin: 30px 0; /* Remove margin lateral, usa apenas o padding do body */
+    text-align: center;
+}
+
+.paginacao a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.paginacao a:hover {
+    background-color: #40679a;
+    color: white;
+}
+
+.paginacao a.ativo {
+    background-color: #40679a;
+    color: white;
+}
+
+/* CONTAINER PRINCIPAL PARA CONTEÚDO */
+.conteudo-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* RESPONSIVIDADE SIMPLES - SEM EMPILHAMENTO */
+@media (max-width: 720px) {
+    body {
+        padding: 180px 15px 15px 15px; /* Reduz padding lateral em mobile */
+    }
+    
+    .topo {
+        padding: 10px 15px; /* Reduz padding do header em mobile */
+    }
+    
+    .filtros-container {
+        padding: 10px 15px; /* Reduz padding dos filtros em mobile */
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros-container {
+        flex-direction: column;
+        align-items: stretch;
+        top: 100px;
+    }
+
+    .filtros-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros-form label,
+    .btn-reset {
+        width: 100%;
+    }
+
+    .filtros-form select {
+        width: 100%;
+    }
+
+    .tabela-scroll {
+        overflow-x: auto;
+        margin: 15px 0;
+    }
+    
+    th, td {
+        padding: 6px 8px; /* Reduz padding das células em mobile */
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 180px 10px 10px 10px; /* Ainda menos padding em telas muito pequenas */
+    }
+    
+    .topo {
+        padding: 8px 10px;
+    }
+    
+    .filtros-container {
+        padding: 8px 10px;
+    }
+    
+    th, td {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Para desktop, adiciona container com largura máxima */
+@media (min-width: 1240px) {
+    body {
+        padding-left: max(20px, calc((100vw - 1200px) / 2));
+        padding-right: max(20px, calc((100vw - 1200px) / 2));
+    }
+}
